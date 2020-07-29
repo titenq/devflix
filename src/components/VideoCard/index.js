@@ -23,7 +23,9 @@ const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
       rel="noopener noreferrer"
       style={{ borderColor: categoryColor || '#ff0000', backgroundImage: `url(${image})` }}
       title={videoTitle}
-    >&nbsp;</a>
+    >
+      &nbsp;
+    </a>
   );
 };
 

@@ -2,12 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   height: calc(100vh - 140px);
   margin-top: 70px;
   background-color: #212121;
 }
 
-.container h1 {
+.container h1,
+.container h2 {
+  display: block;
   color: #fff;
+  margin: 15px 0;
+  text-align: center;
 }
