@@ -24,7 +24,8 @@ const Header = () => {
 
   return (
     <header className={styles.navbar}>
-      <svg className={styles.svg} 
+      <NavLink to="/">
+        <svg className={styles.svg} 
         width="500" 
         height="150" 
         viewBox="0 0 500 150" 
@@ -38,6 +39,7 @@ const Header = () => {
           <path d="M85 0c21,0 42,0 63,0 0,6 0,11 0,17 -13,0 -27,0 -40,0 0,6 0,11 0,17 0,5 0,10 0,16 11,-1 21,-2 32,-2 0,6 0,11 0,17 -11,0 -21,1 -32,2 0,6 0,13 0,19 0,6 0,12 0,18 13,-1 27,-3 40,-4 0,6 0,11 0,17 -21,2 -42,5 -63,9 0,-21 0,-42 0,-63 0,-21 0,-42 0,-63z" stroke="red" strokeWidth="3" strokeLinecap="round"/>
           <path d="M0 0c12,0 23,0 35,0 12,0 20,3 26,8 6,6 9,13 9,24 0,11 0,22 0,32 0,11 0,22 0,33 0,10 -3,19 -9,26 -6,6 -14,11 -26,14 -12,3 -23,7 -35,10 0,-24 0,-49 0,-73 0,-25 0,-49 0,-74zm35 117c4,0 6,-2 9,-4 2,-3 3,-6 3,-11 0,-12 0,-23 0,-35 0,-12 0,-23 0,-35 0,-4 -1,-8 -3,-10 -3,-2 -5,-3 -9,-2 -4,0 -8,0 -12,0 0,17 0,33 0,50 0,17 0,34 0,50 4,-1 8,-2 12,-3z" stroke="red" strokeWidth="3" strokeLinecap="round"/>
         </svg>
+      </NavLink>
         <ul className={`${styles.links} ${isOpen ? styles.links_on : ''}`}>
         {links.map((link, index) => {
           return (

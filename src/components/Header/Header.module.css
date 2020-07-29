@@ -52,7 +52,6 @@ ul li a {
 .btn_hamburger {
   opacity: 0;
   visibility: hidden;
-  transform: translateX(30vw);
   width: 30px;
   height: 4px;
   background-color: #fff;
@@ -80,10 +79,6 @@ ul li a {
 
 .btn_hamburger::after {
   transform: translateY(12px);
-}
-
-.open {
-  transform: translateX(30vw);
 }
 
 .open .btn_hamburger {

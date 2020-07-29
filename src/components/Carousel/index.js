@@ -1,48 +1,66 @@
 import React from 'react';
-import { VideoCardGroupContainer, VideoCardList, Title, ExtraLink } from './styles';
-import VideoCard from './components/VideoCard';
+import { FaReact } from 'react-icons/fa';
+import { FaJs } from 'react-icons/fa';
+import { FaAngular } from 'react-icons/fa';
+import { FaVuejs } from 'react-icons/fa';
+import { FaHtml5 } from 'react-icons/fa';
+import { FaCss3Alt } from 'react-icons/fa';
 
-function VideoCardGroup({
-  ignoreFirstVideo,
-  category,
-}) {
-  const categoryTitle = category.titulo;
-  const categoryColor = category.cor;
+import styles from './Carousel.module.css';
+import VideoCard from '../VideoCard';
+
+const Carousel = ({ ignoreFirstVideo, category, icon }) => {
+  const categoryTitle = category.title;
+  const categoryColor = category.color;
   const categoryExtraLink = category.link_extra;
   const videos = category.videos;
+
   return (
-    <VideoCardGroupContainer>
+    <section className={styles.container}>
       {categoryTitle && (
         <>
-          <Title style={{ backgroundColor: categoryColor || 'red' }}>
+          <h3 
+            className={styles.title} 
+            style={{ backgroundColor: categoryColor || '#ff0000' }}>
             {categoryTitle}
-          </Title>
+          </h3>
           {categoryExtraLink && 
-            <ExtraLink href={categoryExtraLink.url} target="_blank">
+            <a 
+              className={styles.link} 
+              href={categoryExtraLink.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              {categoryExtraLink.text === 'React' && <FaReact />}
+              {categoryExtraLink.text === 'JavaScript' && <FaJs />}
+              {categoryExtraLink.text === 'Angular' && <FaAngular />}
+              {categoryExtraLink.text === 'Vue' && <FaVuejs />}
+              {categoryExtraLink.text === 'HTML' && <FaHtml5 />}
+              {categoryExtraLink.text === 'CSS' && <FaCss3Alt />}
               {categoryExtraLink.text}  
-            </ExtraLink>
+            </a>
           }
         </>
       )}
-      <VideoCardList>
+      <ul className={styles.video_list}>
         {videos.map((video, index) => {
           if (ignoreFirstVideo && index === 0) {
             return null;
           }
 
           return (
-            <li key={video.titulo}>
+            <li key={video.title}>
               <VideoCard
-                videoTitle={video.titulo}
+                videoTitle={video.title}
                 videoURL={video.url}
                 categoryColor={categoryColor}
               />
             </li>
           );
         })}
-      </VideoCardList>
-    </VideoCardGroupContainer>
+      </ul>
+    </section>
   );
-}
+};
 
-export default VideoCardGroup;
+export default Carousel;

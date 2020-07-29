@@ -1,19 +1,20 @@
 import React from 'react';
 
-import { VideoContainer, ResponsiveIframe } from './styles';
+import styles from './Iframe.module.css';
 
-function YouTubeIframeResponsive({ youtubeID }) {
+const Iframe = ({ youtubeID }) => {
   return (
-    <VideoContainer>
-      <ResponsiveIframe
+    <div className={styles.container}>
+      <iframe
+        className={styles.iframe}
         title="Titulo do Iframe"
         src={`https://www.youtube.com/embed/${youtubeID}?autoplay=0&mute=1`}
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
-    </VideoContainer>
+    </div>
   );
-}
+};
 
-export default YouTubeIframeResponsive;
+export default Iframe;

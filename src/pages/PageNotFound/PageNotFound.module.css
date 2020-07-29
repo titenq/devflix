@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 140px);
+  margin-top: 70px;
+  background-color: #212121;
+}
+
+.container h1 {
+  color: #fff;
+}

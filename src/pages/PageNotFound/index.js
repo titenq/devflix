@@ -4,7 +4,7 @@ import styles from './PageNotFound.module.css';
 
 const PageNotFound = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <h1>PageNotFound</h1>
     </div>
   );
