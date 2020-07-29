@@ -1,0 +1,228 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 0 20px;
+  background-color: #212121;
+  color: #fff;
+  border-bottom: 1px solid #212121;
+  box-shadow: 0 0 4px #fff;
+  z-index: 999;
+  animation: to-block 2s ease forwards 3.4s;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+ul li a {
+  opacity: 0;
+  visibility: hidden;
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 40px;
+  animation: show-links 2s ease forwards 4.4s;
+}
+
+.hover_link {
+  color: #fff;
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  top: 15px;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn_hamburger {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(30vw);
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #000;
+  animation: show-links 2s ease forwards 4s;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn_hamburger::before,
+.btn_hamburger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn_hamburger::before {
+  transform: translateY(-12px);
+}
+
+.btn_hamburger::after {
+  transform: translateY(12px);
+}
+
+.open {
+  transform: translateX(30vw);
+}
+
+.open .btn_hamburger {
+  transform: translateX(-50px);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.open .btn_hamburger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+  box-shadow: none;
+}
+
+.open .btn_hamburger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+  box-shadow: none;
+}
+
+.svg {
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: svg-fill 0.5s ease forwards 2.4s, 
+    to-menu 2s ease forwards 3.4s;
+}
+
+.svg path:nth-child(1) {
+  stroke-dasharray: 590px;
+  stroke-dashoffset: 590px;
+  animation: svg-animate 0.3s ease forwards 2.1s;
+}
+
+.svg path:nth-child(2) {
+  stroke-dasharray: 295px;
+  stroke-dashoffset: 295px;
+  animation: svg-animate 0.3s ease forwards 1.8s;
+}
+
+.svg path:nth-child(3) {
+  stroke-dasharray: 355px;
+  stroke-dashoffset: 355px;
+  animation: svg-animate 0.3s ease forwards 1.5s;
+}
+
+.svg path:nth-child(4) {
+  stroke-dasharray: 410px;
+  stroke-dashoffset: 410px;
+  animation: svg-animate 0.3s ease forwards 1.2s;
+}
+
+.svg path:nth-child(5) {
+  stroke-dasharray: 485px;
+  stroke-dashoffset: 485px;
+  animation: svg-animate 0.3s ease forwards 0.9s;
+}
+
+.svg path:nth-child(6) {
+  stroke-dasharray: 518px;
+  stroke-dashoffset: 518px;
+  animation: svg-animate 0.3s ease forwards 0.6s;
+}
+
+.svg path:nth-child(7) {
+  stroke-dasharray: 400px;
+  stroke-dashoffset: 400px;
+  animation: svg-animate 0.3s ease forwards 0.3s;
+}
+
+@keyframes svg-animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes svg-fill {
+  from {
+    fill: transparent;
+    stroke-opacity: 1;
+  }
+
+  to {
+    fill: #ff0000;
+    stroke-opacity: 0;
+    filter: drop-shadow(6px 6px 4px #fff);
+  }
+}
+
+@keyframes to-menu {
+  to {
+    width: 100px;
+    filter: none;
+    top: -40px;
+    left: 40px;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes to-block {
+  to {
+    height: 70px;
+  }
+}
+
+@keyframes show-links {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .hamburger {
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .links {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 70px;
+    right: 0;
+    background-color: #212121;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .links_on {
+    transform: translateX(0);
+  }
+
+  .hover_link {
+    margin-top: 40px;
+  }
+}
