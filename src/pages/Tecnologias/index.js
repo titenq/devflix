@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import styles from './Tecnologias.module.css';
-import FormField from '../../components/FormField';
+import Button from '../../components/Button';
 
 
 const Tecnologias = () => {
@@ -64,30 +64,40 @@ const Tecnologias = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Cadastro de Tecnologia</h1>
 
-      <form onSubmit={handleSubmit}>
-        <FormField
-          label="Nome da Tecnologia:"
-          htmlFor="name"
-          type="text"
-          id="name"
-          name="name"
-          value={values.name}
-          onChange={handleChange}
-        />
+      <div className={styles.form_container}>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.form}>
+            <div className={styles.label_float}>
+              <input
+                className={styles.input}
+                type="text" 
+                id="name" 
+                name="name"
+                value={values.name} 
+                placeholder=" "
+                autoComplete="off"
+                onChange={handleChange} 
+              />
+              <label className={styles.label} htmlFor="name">Nome da Tecnologia</label>
+            </div>
 
-        <FormField
-          label="Cor da Tecnologia:"
-          htmlFor="color"
-          type="color"
-          id="color"
-          name="color"
-          value={values.color}
-          onChange={handleChange}
-        />
-        <button>
-          Cadastrar
-        </button>
-      </form>
+            <label className={styles.label_color} htmlFor="color">Escolha a Cor:</label>
+            <div className={styles.color_container}>
+            <input
+                className={styles.color}
+                type="color" 
+                id="color" 
+                name="color"
+                value={values.color}
+                onChange={handleChange} 
+              />
+            </div>
+          </div>
+          
+          <Button />
+        </form>
+      </div>
+
       <ul>
         {technologies.map((technology, index) => {
           return (
