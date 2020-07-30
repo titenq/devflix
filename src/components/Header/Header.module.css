@@ -21,7 +21,7 @@ ul li {
   list-style: none;
 }
 
-ul li a {
+.hover_link {
   opacity: 0;
   visibility: hidden;
   list-style: none;
@@ -31,11 +31,12 @@ ul li a {
   font-weight: 700;
   font-size: 20px;
   margin-left: 40px;
+  transition: color 0.5s ease-in-out;
   animation: show-links 2s ease forwards 8s;
 }
 
-.hover_link {
-  color: #fff;
+.hover_link:hover {
+  color: #ff0000;
 }
 
 .hamburger {

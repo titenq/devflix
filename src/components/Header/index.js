@@ -9,9 +9,13 @@ const links = [
     to: '/'
   },
   {
-    name: 'Tecnologias',
+    name: 'Cadastrar Tecnologias',
     to: '/tecnologias'
-  }
+  },
+  {
+    name: 'Cadastrar Vídeos',
+    to: '/videos'
+  },
 ];
 
 const Header = () => {
@@ -43,8 +47,15 @@ const Header = () => {
         <ul className={`${styles.links} ${isOpen ? styles.links_on : ''}`}>
         {links.map((link, index) => {
           return (
-            <li key={index} className={styles.hover_link}>
-              <NavLink to={link.to} exact onClick={toggleOpen}>{link.name}</NavLink>
+            <li key={index}>
+              <NavLink 
+                className={styles.hover_link} 
+                to={link.to}
+                exact 
+                activeStyle={{ color: '#ff0000' }} 
+                onClick={toggleOpen}>
+                  {link.name}
+              </NavLink>
             </li>
           );
         })}
