@@ -4,7 +4,7 @@
       "title": "HTML",
       "color": "#EF652A",
       "link_extra": {
-        "text": "HTML",
+        "text": "Documentação HTML",
         "url": "https://developer.mozilla.org/pt-BR/docs/Web/HTML"
       },
       "videos": [
@@ -34,7 +34,7 @@
       "title": "CSS",
       "color": "#008DD2",
       "link_extra": {
-        "text": "CSS",
+        "text": "Documentação CSS",
         "url": "https://developer.mozilla.org/pt-BR/docs/Web/CSS"
       },
       "videos": [
@@ -64,7 +64,7 @@
       "title": "JavaScript",
       "color": "#F7DF1E",
       "link_extra": {
-        "text": "JavaScript",
+        "text": "Documentação JavaScript",
         "url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
       },
       "videos": [
@@ -95,7 +95,7 @@
       "link": "https://www.alura.com.br/formacao-front-end",
       "color": "#61DAFB",
       "link_extra": {
-        "text": "React",
+        "text": "Documentação React",
         "url": "https://pt-br.reactjs.org/"
       },
       "videos": [
@@ -125,7 +125,7 @@
       "title": "Angular",
       "color": "#DD0031",
       "link_extra": {
-        "text": "Angular",
+        "text": "Documentação Angular",
         "url": "https://angular.io/"
       },
       "videos": [
@@ -151,7 +151,7 @@
       "title": "Vue",
       "color": "#41B883",
       "link_extra": {
-        "text": "Vue",
+        "text": "Documentação Vue",
         "url": "https://br.vuejs.org/index.html"
       },
       "videos": [

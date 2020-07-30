@@ -33,12 +33,12 @@ const Carousel = ({ ignoreFirstVideo, category, icon }) => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              {categoryExtraLink.text === 'React' && <FaReact />}
-              {categoryExtraLink.text === 'JavaScript' && <FaJs />}
-              {categoryExtraLink.text === 'Angular' && <FaAngular />}
-              {categoryExtraLink.text === 'Vue' && <FaVuejs />}
-              {categoryExtraLink.text === 'HTML' && <FaHtml5 />}
-              {categoryExtraLink.text === 'CSS' && <FaCss3Alt />}
+              {categoryExtraLink.text === 'Documentação React' && <FaReact />}
+              {categoryExtraLink.text === 'Documentação JavaScript' && <FaJs />}
+              {categoryExtraLink.text === 'Documentação Angular' && <FaAngular />}
+              {categoryExtraLink.text === 'Documentação Vue' && <FaVuejs />}
+              {categoryExtraLink.text === 'Documentação HTML' && <FaHtml5 />}
+              {categoryExtraLink.text === 'Documentação CSS' && <FaCss3Alt />}
               {categoryExtraLink.text}  
             </a>
           }
