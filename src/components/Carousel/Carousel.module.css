@@ -1,8 +1,8 @@
 .container {
   color: #fff;
   min-height: 197px;
-  margin-left: 5%;
   margin-bottom: 16px;
+  margin: 20px 4%;
 }
 
 .title {
