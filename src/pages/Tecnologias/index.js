@@ -48,11 +48,10 @@ const Tecnologias = () => {
     });
   };
   
-  const handleChange = event => {
-    const { getAttribute, value } = event.target;
-
-    setValue(getAttribute('name'), value);
-  };
+  const handleChange = event => setValue(
+    event.target.getAttribute('name'), 
+    event.target.value
+  );
 
   const handleSubmit = event => {
     event.preventDefault();
