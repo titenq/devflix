@@ -76,6 +76,7 @@ const Tecnologias = () => {
                 value={values.name} 
                 placeholder=" "
                 autoComplete="off"
+                required
                 onChange={handleChange} 
               />
               <label className={styles.label} htmlFor="name">Nome da Tecnologia</label>

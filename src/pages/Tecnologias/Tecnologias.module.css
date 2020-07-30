@@ -70,16 +70,8 @@
   box-sizing: border-box;
 }
 
-.label_float .input:required:invalid + .label {
-  color: red;
-}
-
 .label_float .input:focus:required:invalid {
   border: 2px solid red;
-}
-
-.label_float .input:required:invalid + .label:before {
-  content: '*';
 }
 
 .label_float .input:focus + .label,
