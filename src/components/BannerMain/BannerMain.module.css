@@ -75,6 +75,11 @@
   margin: 0 auto;
 }
 
+.description {
+  line-height: 25px;
+  font-weight: 500;
+}
+
 @media (max-width: 800px) {
   .container {
     height: auto;

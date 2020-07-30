@@ -92,13 +92,16 @@
     },
     {
       "title": "React",
-      "link": "https://www.alura.com.br/formacao-front-end",
       "color": "#61DAFB",
       "link_extra": {
         "text": "Documentação React",
         "url": "https://pt-br.reactjs.org/"
       },
       "videos": [
+        {
+          "title": "Como fazer validações de formulário com React?",
+          "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU"
+        },        
         {
           "title": "SEO com React",
           "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
@@ -118,7 +121,7 @@
         {
           "title": "Criando um Blog do Zero com Node.js e React.js :: Parte 1 - configurando a plataforma",
           "url": "https://www.youtube.com/watch?v=ov7VjrH5kfw"
-        }        
+        }   
       ]
     },
     {

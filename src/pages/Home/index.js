@@ -11,7 +11,7 @@ const Home = () => {
       <BannerMain
         videoTitle={data.categories[3].videos[0].title}
         url={data.categories[3].videos[0].url}
-        videoDescription={"Eu tô aqui pra nesse vídeo dizer que a gente vai aprender a começar uma app inspirada no desenho Pokémon com Nextjs e React, ver algumas dicas sobre performance e de quebra conhecer uma plataforma sensacional pra fazer deploy que é a Vercel. Tudo em 22 minutos nesse vídeo feito com todo o carinho do mundo construindo uma 'Pokedex'! 😍 bora ver? \\o"}
+        videoDescription={"Já parou pra pensar como uma biblioteca tipo o Formik lida com as suas validações de formulário? Nesse vídeo aqui, vamos fazer passo a passo uma forma super bacana de lidar com validações de formulário usando custom hooks, useEffect de um jeito bem natural e que você conseguiria aplicar no seu projeto amanhã! O mais legal é que com tudo que a gente fizer aqui, você também tá aprendendo a usar o Formik :D Bora ver? 🛠️"}
       />
       <Carousel category={data.categories[0]} />
       <Carousel category={data.categories[1]} />
