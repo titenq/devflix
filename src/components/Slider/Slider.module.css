@@ -1,0 +1,39 @@
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  transform: initial;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-size: 30px;
+}
+  
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slider_item {
+  margin-right: 6px;
+}
+
+.slider_item img {
+  margin: 16px;
+  width: 298px;
+  height: 197px;
+  object-fit: cover;
+}

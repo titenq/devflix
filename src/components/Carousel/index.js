@@ -8,6 +8,8 @@ import { FaCss3Alt } from 'react-icons/fa';
 
 import styles from './Carousel.module.css';
 import VideoCard from '../VideoCard';
+import Slider from '../Slider/index';
+import SliderItem from '../Slider/index';
 
 const Carousel = ({ ignoreFirstVideo, category, icon }) => {
   const categoryTitle = category.title;
@@ -42,23 +44,23 @@ const Carousel = ({ ignoreFirstVideo, category, icon }) => {
           }
         </>
       )}
-      <ul className={styles.video_list}>
+      <Slider className={styles.video_list}>
         {videos.map((video, index) => {
           if (ignoreFirstVideo && index === 0) {
             return null;
           }
 
           return (
-            <li key={video.title}>
+            <SliderItem key={video.title}>
               <VideoCard
                 videoTitle={video.title}
                 videoURL={video.url}
                 categoryColor={categoryColor}
               />
-            </li>
+            </SliderItem>
           );
         })}
-      </ul>
+      </Slider>
     </section>
   );
 };
