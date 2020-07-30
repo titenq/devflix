@@ -57,7 +57,7 @@ ul li a {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #000;
-  animation: show-links 2s ease forwards 4s;
+  animation: show-links 2s ease forwards 8s;
   transition: all 0.5s ease-in-out;
 }
 
@@ -191,7 +191,7 @@ ul li a {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .hamburger {
     display: inline-block;
     opacity: 1;
