@@ -2,6 +2,10 @@
   margin-top: 90px;
   color: #fff;
   text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-clip: border-box;
 }
 
 .title {
@@ -9,6 +13,7 @@
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 500;
+  text-shadow: 2px 2px 2px #000;
 }
 
 .form_container {
@@ -23,12 +28,34 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 50vw;
+  width: 40vw;
   height: 40vh;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 40px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.form span {
+  color: #000;
+}
+
+.input_container {
+  background-color: #fff;
+  padding: 5px 20px 15px 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.input_color_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px 60px;
+  border-radius: 5px;
 }
 
 .label_float {
@@ -81,17 +108,13 @@
   color: #3951b2;
 }
 
-.input {
-  margin-bottom: 20px;
-}
-
 .label {
-  color: #ccc;
+  color: #868686;
 }
 
 .label_color {
   color: #000;
-  margin: 20px 0;
+  padding: 5px;
 }
 
 .color_container {
