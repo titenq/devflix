@@ -84,14 +84,6 @@ const Tecnologias = () => {
           <Button />
         </form>
       </div>
-
-      <ul>
-        {technologies.map((technology, index) => {
-          return (
-            <li key={index}>{technology.name} - {technology.color}</li>
-          )
-        })}
-      </ul>
     </div>
   );
 };

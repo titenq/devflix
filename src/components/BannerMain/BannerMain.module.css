@@ -125,7 +125,7 @@
 }
 
 .glitch {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 140px);
   margin: 0 auto;
   overflow: hidden;
   position: relative;
