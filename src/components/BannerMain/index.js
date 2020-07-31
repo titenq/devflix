@@ -16,7 +16,12 @@ const BannerMain = ({ videoTitle, videoDescription, url }) => {
   const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
 
   return (
-    <section className={styles.container} style={{ backgroundImage: `url(${bgUrl})` }}>
+    <section className={`${styles.container} ${styles.glitch}`} style={{ backgroundImage: `url(${bgUrl})` }}>
+      <div className={styles.glitch_img} style={{ backgroundImage: `url(${bgUrl})` }}></div>
+      <div className={styles.glitch_img} style={{ backgroundImage: `url(${bgUrl})` }}></div>
+      <div className={styles.glitch_img} style={{ backgroundImage: `url(${bgUrl})` }}></div>
+      <div className={styles.glitch_img} style={{ backgroundImage: `url(${bgUrl})` }}></div>
+      <div className={styles.glitch_img} style={{ backgroundImage: `url(${bgUrl})` }}></div>
       <div className={styles.area_container}>
         <div className={styles.item}>
           <h2 className={styles.title}>
