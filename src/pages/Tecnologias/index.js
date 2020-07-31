@@ -1,37 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import styles from './Tecnologias.module.css';
 import Button from '../../components/Button';
 
 
 const Tecnologias = () => {
-  /* const initialValues = [
-    {
-      name: 'HTML', 
-      color: '#EF652A'
-    },
-    {
-      name: 'CSS', 
-      color: '#008DD2'
-    },
-    {
-      name: 'JavaScript', 
-      color: '#F7DF1E'
-    },
-    {
-      name: 'React', 
-      color: '#61DAFB'
-    },
-    {
-      name: 'Angular', 
-      color: '#DD0031'
-    },
-    {
-      name: 'Vue', 
-      color: '#41B883'
-    }
-  ]; */
-
   const initialValues = {
     name: '', 
     color: '#ff0000'
@@ -59,6 +32,17 @@ const Tecnologias = () => {
     setTechnologies([...technologies, values]);
     setValues(initialValues);
   };
+
+  useEffect(() => {
+    const URL = 'http://localhost:8080/categories';
+
+    fetch(URL)
+      .then(async data => {
+        const response = await data.json();
+
+        setTechnologies([...response]);
+      });
+  }, []);
 
   return (
     <div className={styles.container}>
