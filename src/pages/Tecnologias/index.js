@@ -34,7 +34,9 @@ const Tecnologias = () => {
   };
 
   useEffect(() => {
-    const URL = 'http://localhost:8080/categories';
+    const URL = window.location.hostname.includes('localhost') 
+      ? 'http://localhost:8080/categories'
+      : 'https://apidevflix.herokuapp.com/categories';
 
     fetch(URL)
       .then(async data => {
