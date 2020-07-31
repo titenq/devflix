@@ -8,10 +8,15 @@ const Slider = ({ children }) => (
     <SlickSlider {...{
       dots: false,
       infinite: true,
-      speed: 300,
+      speed: 500,
       centerMode: false,
       variableWidth: true,
-      adaptiveHeight: true
+      adaptiveHeight: true,
+      swipeToSlide: true,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      pauseOnHover: true
     }}
     >
       {children}
