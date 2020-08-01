@@ -11,35 +11,33 @@ import VideoCard from '../VideoCard';
 import Slider from '../Slider/index';
 import SliderItem from '../Slider/index';
 
-const Carousel = ({ ignoreFirstVideo, category, icon }) => {
-  const categoryTitle = category.title;
-  const categoryColor = category.color;
-  const categoryExtraLink = category.link_extra;
-  const videos = category.videos;
+const Carousel = ({ ignoreFirstVideo, technology }) => {
+  const { name, color, link_extra, videos} = technology;
+  const { text, url } = link_extra;
 
   return (
     <section className={styles.container}>
-      {categoryTitle && (
+      {name && (
         <>
           <h3 
             className={styles.title} 
-            style={{ backgroundColor: categoryColor || '#ff0000' }}>
-            {categoryTitle}
+            style={{ backgroundColor: color || '#ff0000' }}>
+            {name}
           </h3>
-          {categoryExtraLink && 
+          {link_extra && 
             <a 
               className={styles.link} 
-              href={categoryExtraLink.url} 
+              href={url} 
               target="_blank" 
               rel="noopener noreferrer"
             >
-              {categoryExtraLink.text === 'Documentação React' && <FaReact />}
-              {categoryExtraLink.text === 'Documentação JavaScript' && <FaJs />}
-              {categoryExtraLink.text === 'Documentação Angular' && <FaAngular />}
-              {categoryExtraLink.text === 'Documentação Vue' && <FaVuejs />}
-              {categoryExtraLink.text === 'Documentação HTML' && <FaHtml5 />}
-              {categoryExtraLink.text === 'Documentação CSS' && <FaCss3Alt />}
-              {categoryExtraLink.text}  
+              {text === 'Documentação React' && <FaReact />}
+              {text === 'Documentação JavaScript' && <FaJs />}
+              {text === 'Documentação Angular' && <FaAngular />}
+              {text === 'Documentação Vue' && <FaVuejs />}
+              {text === 'Documentação HTML' && <FaHtml5 />}
+              {text === 'Documentação CSS' && <FaCss3Alt />}
+              {text}  
             </a>
           }
         </>
@@ -51,11 +49,11 @@ const Carousel = ({ ignoreFirstVideo, category, icon }) => {
           }
 
           return (
-            <SliderItem key={video.title}>
+            <SliderItem key={video.name}>
               <VideoCard
-                videoTitle={video.title}
+                videoTitle={video.name}
                 videoURL={video.url}
-                categoryColor={categoryColor}
+                technologyColor={color}
               />
             </SliderItem>
           );

@@ -36,8 +36,8 @@ const Tecnologias = () => {
 
   useEffect(() => {
     const URL = window.location.hostname.includes('localhost') 
-      ? 'http://localhost:8080/tecnologies'
-      : 'https://apidevflix.herokuapp.com/tecnologies';
+      ? 'http://localhost:8080/technologies'
+      : 'https://apidevflix.herokuapp.com/technologies';
 
     fetch(URL)
       .then(async data => {

@@ -39,12 +39,12 @@ const Videos = () => {
       ? 'http://localhost:8080/tecnologies'
       : 'https://apidevflix.herokuapp.com/tecnologies';
 
-    fetch(URL)
+    /* fetch(URL)
       .then(async data => {
         const response = await data.json();
 
         setTechnologies([...response]);
-      });
+      }); */
   }, []);
 
   return (
