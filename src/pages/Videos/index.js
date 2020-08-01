@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './Videos.module.css';
 import Button from '../../components/Button';
 import screenshot from '../../assets/img/screenshot.jpg';
-
+import create from '../../repositories/videos';
+import { getAll } from '../../repositories/technologies';
 
 const Videos = () => {
+  const history = useHistory();
+
   const initialValues = {
-    name: '', 
-    color: '#6925D9'
+    technologyId: 1,
+    title: '', 
+    url: ''
   };
  
   const [values, setValues] = useState(initialValues);
-
   const [technologies, setTechnologies] = useState([]);
 
   const setValue = (key, value) => {
@@ -30,21 +34,19 @@ const Videos = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    setTechnologies([...technologies, values]);
-    setValues(initialValues);
+    // const technologyId = technologies.find(category => category.title === values.category);
+
+    create({
+      technologyId: Number(values.technologyId),
+      title: values.title,
+      url: values.url,
+    })
+    .then(() => history.push('/'));
   };
 
   useEffect(() => {
-    const URL = window.location.hostname.includes('localhost') 
-      ? 'http://localhost:8080/tecnologies'
-      : 'https://apidevflix.herokuapp.com/tecnologies';
-
-    /* fetch(URL)
-      .then(async data => {
-        const response = await data.json();
-
-        setTechnologies([...response]);
-      }); */
+    getAll()
+      .then(technologies => setTechnologies(technologies))
   }, []);
 
   return (
@@ -55,20 +57,28 @@ const Videos = () => {
         <form onSubmit={handleSubmit}>
           <div className={styles.form}>
             <div className={styles.input_container}>
+              <span>Selecione a Tecnologia: &nbsp;</span>
+                <select name="technologyId" id="technologyId" onChange={handleChange} required>
+                  {technologies.map(technology => (
+                    <option key={technology.id} value={technology.id}>{technology.name}</option>
+                  ))}
+                </select>
+            </div>
+            <div className={styles.input_container}>
               <span>Digite o Título do Vídeo no YouTube:</span>
               <div className={styles.label_float}>
                 <input
                   className={styles.input}
                   type="text" 
-                  id="name" 
-                  name="name"
-                  value={values.name} 
+                  id="title" 
+                  name="title"
+                  value={values.title} 
                   placeholder=" "
                   autoComplete="off"
                   required
                   onChange={handleChange} 
                 />
-                <label className={styles.label} htmlFor="name">Digite o Título</label>
+                <label className={styles.label} htmlFor="title">Digite o Título</label>
               </div>
             </div>
             <div className={styles.input_container}>
@@ -76,16 +86,16 @@ const Videos = () => {
               <div className={styles.label_float}>
                 <input
                   className={styles.input}
-                  type="text" 
-                  id="name" 
-                  name="name"
-                  value={values.name} 
+                  type="url" 
+                  id="url" 
+                  name="url"
+                  value={values.url} 
                   placeholder=" "
                   autoComplete="off"
                   required
                   onChange={handleChange} 
                 />
-                <label className={styles.label} htmlFor="name">Digite a URL</label>
+                <label className={styles.label} htmlFor="url">Digite a URL</label>
               </div>
             </div>
           </div>

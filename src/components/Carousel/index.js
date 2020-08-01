@@ -49,7 +49,7 @@ const Carousel = ({ ignoreFirstVideo, technology }) => {
           }
 
           return (
-            <SliderItem key={video.name}>
+            <SliderItem key={index}>
               <VideoCard
                 videoTitle={video.name}
                 videoURL={video.url}
