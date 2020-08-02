@@ -1,10 +1,22 @@
 import React from 'react';
-import { FaReact } from 'react-icons/fa';
-import { FaJs } from 'react-icons/fa';
-import { FaAngular } from 'react-icons/fa';
-import { FaVuejs } from 'react-icons/fa';
-import { FaHtml5 } from 'react-icons/fa';
-import { FaCss3Alt } from 'react-icons/fa';
+import { 
+  FaReact,
+  FaJs,
+  FaAngular,
+  FaVuejs,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaDocker,
+  FaJava,
+  FaLess,
+  FaGit,
+  FaLinux,
+  FaLaravel,
+  FaPhp,
+  FaPython,
+  FaSass
+} from 'react-icons/fa';
 
 import styles from './Carousel.module.css';
 import VideoCard from '../VideoCard';
@@ -31,13 +43,23 @@ const Carousel = ({ ignoreFirstVideo, technology }) => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              {text === 'Documentação React' && <FaReact />}
-              {text === 'Documentação JavaScript' && <FaJs />}
-              {text === 'Documentação Angular' && <FaAngular />}
-              {text === 'Documentação Vue' && <FaVuejs />}
-              {text === 'Documentação HTML' && <FaHtml5 />}
-              {text === 'Documentação CSS' && <FaCss3Alt />}
-              {text}  
+              {name === 'React' && <FaReact />}
+              {name === 'JavaScript' && <FaJs />}
+              {name === 'Angular' && <FaAngular />}
+              {name === 'Vue' && <FaVuejs />}
+              {name === 'HTML' && <FaHtml5 />}
+              {name === 'CSS' && <FaCss3Alt />}
+              {name === 'NodeJS' && <FaNodeJs />}
+              {name === 'Docker' && <FaDocker />}
+              {name === 'Java' && <FaJava />}
+              {name === 'Linux' && <FaLinux />}
+              {name === 'Laravel' && <FaLaravel />}
+              {name === 'Python' && <FaPython />}
+              {(name === 'Less' || name === 'LESS') && <FaLess />}
+              {(name === 'Sass' || name === 'SASS') && <FaSass />}
+              {(name === 'GIT' || name === 'Git') && <FaGit />}
+              {(name === 'Php' || name === 'PHP') && <FaPhp />}
+              {name}  
             </a>
           }
         </>
