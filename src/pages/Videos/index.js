@@ -70,8 +70,9 @@ const Videos = () => {
                   name="technologyId" 
                   id="technologyId" 
                   onChange={handleChange} 
+                  autoFocus
                   required>
-                    <option>Selecione:</option>
+                    <option value="" selected disabled>Selecione:</option>
                   {technologies.map(technology => (
                     <option key={technology.id} value={technology.id}>{technology.name}</option>
                   ))}
