@@ -18,7 +18,7 @@ const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
     <a
       className={styles.container}
       href={videoURL}
-      alt="imagem"
+      alt={videoTitle}
       target="_blank"
       rel="noopener noreferrer"
       style={{ borderColor: categoryColor || '#ff0000', backgroundImage: `url(${image})` }}
