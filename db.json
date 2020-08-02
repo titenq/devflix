@@ -253,6 +253,12 @@
       "title": "Async / Await SIMPLES e DESCOMPLICADO no JavaScript // Mão no Código #22",
       "url": "https://www.youtube.com/watch?v=h0sNAXE1ozo",
       "id": 38
+    },
+    {
+      "technologyId": 5,
+      "title": "Angular: Novidades Angular v9 Ivy: TypeScript 3.7 (optional chaining e coalescência nula)",
+      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0",
+      "id": 40
     }
   ]
 }

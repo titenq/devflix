@@ -4,14 +4,15 @@ import { useHistory } from 'react-router-dom';
 import styles from './Videos.module.css';
 import Button from '../../components/Button';
 import screenshot from '../../assets/img/screenshot.jpg';
-import create from '../../repositories/videos';
+import URL_VIDEOS from '../../repositories/videos';
+import  { create } from '../../repositories/videos';
 import { getAll } from '../../repositories/technologies';
 
 const Videos = () => {
   const history = useHistory();
 
   const initialValues = {
-    technologyId: 1,
+    technologyId: null,
     title: '', 
     url: ''
   };
@@ -33,9 +34,7 @@ const Videos = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    // const technologyId = technologies.find(category => category.title === values.category);
-
+  
     create({
       technologyId: Number(values.technologyId),
       title: values.title,
@@ -45,6 +44,13 @@ const Videos = () => {
   };
 
   useEffect(() => {
+    fetch(URL_VIDEOS, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(values)
+  });
     getAll()
       .then(technologies => setTechnologies(technologies))
   }, []);
