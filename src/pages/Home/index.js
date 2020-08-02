@@ -25,12 +25,7 @@ const Home = () => {
             url={technologies[3].videos[0].url}
             videoDescription={"Já parou pra pensar como uma biblioteca tipo o Formik lida com as suas validações de formulário? Nesse vídeo aqui, vamos fazer passo a passo uma forma super bacana de lidar com validações de formulário usando custom hooks, useEffect de um jeito bem natural e que você conseguiria aplicar no seu projeto amanhã!"}
           />
-            <Carousel technology={technologies[0]} />
-            <Carousel technology={technologies[1]} />
-            <Carousel technology={technologies[2]} />
-            <Carousel technology={technologies[3]} ignoreFirstVideo />
-            <Carousel technology={technologies[4]} />
-            <Carousel technology={technologies[5]} />
+          {technologies.map(technology => <Carousel technology={technology} />)}
         </>
       )}
     </div>
