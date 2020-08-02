@@ -136,6 +136,15 @@
   cursor: pointer;
 }
 
+.select {
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #212121;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
 @media screen and (max-width: 750px) {
   .form {
     width: 80vw;

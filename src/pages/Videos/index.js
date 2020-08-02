@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { FaArrowAltCircleDown } from 'react-icons/fa';
 
 import styles from './Videos.module.css';
 import Button from '../../components/Button';
@@ -64,7 +65,13 @@ const Videos = () => {
           <div className={styles.form}>
             <div className={styles.input_container}>
               <span>Selecione a Tecnologia: &nbsp;</span>
-                <select name="technologyId" id="technologyId" onChange={handleChange} required>
+                <select 
+                  className={styles.select}
+                  name="technologyId" 
+                  id="technologyId" 
+                  onChange={handleChange} 
+                  required>
+                    <option>Selecione:</option>
                   {technologies.map(technology => (
                     <option key={technology.id} value={technology.id}>{technology.name}</option>
                   ))}
