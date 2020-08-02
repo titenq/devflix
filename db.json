@@ -53,15 +53,6 @@
         "text": "Documentação Vue",
         "url": "https://br.vuejs.org/index.html"
       }
-    },
-    {
-      "name": "NodeJS",
-      "color": "#79db29",
-      "link_extra": {
-        "text": "Nova Tecnologia",
-        "url": "https://google.com"
-      },
-      "id": 7
     }
   ],
   "videos": [
@@ -268,18 +259,6 @@
       "title": "Angular: Novidades Angular v9 Ivy: TypeScript 3.7 (optional chaining e coalescência nula)",
       "url": "https://www.youtube.com/watch?v=34uHo7hFmG0",
       "id": 40
-    },
-    {
-      "technologyId": 7,
-      "title": "O que é Node.js? (Entenda de uma vez por todas)",
-      "url": "https://www.youtube.com/watch?v=nfrVPzDJZQc",
-      "id": 43
-    },
-    {
-      "technologyId": null,
-      "title": "",
-      "url": "",
-      "id": 44
     }
   ]
 }
