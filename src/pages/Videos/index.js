@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FaArrowAltCircleDown } from 'react-icons/fa';
 
 import styles from './Videos.module.css';
 import Button from '../../components/Button';

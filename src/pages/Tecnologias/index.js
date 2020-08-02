@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './Tecnologias.module.css';
 import Button from '../../components/Button';
 import screenshot from '../../assets/img/screenshot.jpg';
+import { createTechnology } from '../../repositories/technologies';
 
 
 const Tecnologias = () => {
+  const history = useHistory();
+
   const initialValues = {
     name: '', 
     color: '#6925D9'
   };
  
   const [values, setValues] = useState(initialValues);
-
-  const [technologies, setTechnologies] = useState([]);
 
   const setValue = (key, value) => {
     setValues({
@@ -29,23 +31,17 @@ const Tecnologias = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    setTechnologies([...technologies, values]);
-    setValues(initialValues);
+  
+    createTechnology({
+      name: values.name,
+      color: values.color,
+      link_extra: {
+        text: 'Nova Tecnologia',
+        url: 'https://google.com'
+      }
+    })
+    .then(() => history.push('/'));
   };
-
-  useEffect(() => {
-    const URL = window.location.hostname.includes('localhost') 
-      ? 'http://localhost:8080/technologies'
-      : 'https://apidevflix.herokuapp.com/technologies';
-
-    fetch(URL)
-      .then(async data => {
-        const response = await data.json();
-
-        setTechnologies([...response]);
-      });
-  }, []);
 
   return (
     <div className={styles.container} style={{ backgroundImage: `url(${screenshot})` }}>
