@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPlay } from 'react-icons/fa';
 
 import styles from './BannerMain.module.css';
 import Iframe from '../Iframe';
@@ -35,7 +36,14 @@ const BannerMain = ({ videoTitle, videoDescription, url }) => {
 
         <div className={styles.item}>
           <Iframe youtubeID={youTubeID} />
-          <button className={styles.watch_button}>Assistir</button>
+          <a 
+            className={styles.watch_button}
+            href={`https://youtube.com/watch?v=${youTubeID}`} 
+            target="_blank" 
+            rel="noopenner noreferrer" 
+          >
+            <FaPlay />
+          </a>
         </div>
       </div>
     </section>

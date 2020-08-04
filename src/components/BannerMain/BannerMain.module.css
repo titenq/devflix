@@ -57,24 +57,23 @@
 }
 
 .watch_button {
-  font-family: 'Ubuntu', sans-serif;
-  box-sizing: border-box;
+  width: 30vw;
   cursor: pointer;
-  padding: 16px 24px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  outline: none;
+  padding: 25px 1px;
+  font-size: 32px;
   border-radius: 5px;
-  text-decoration: none;
   display: inline-block;
-  border: 1px solid transparent;
-  color: #000;
-  background: #fff;
-  border-color: #000;
-  transition: opacity .3s;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
   display: none;
   margin: 0 auto;
+}
+
+.watch_button:hover {
+  background-color: #ff0000;
+  color: #fff;
 }
 
 .description {
