@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 import BannerMain from '../../components/BannerMain/index';
 import Carousel from '../../components/Carousel/index';
 import getAllWithVideos from '../../repositories/technologies';
+import Loading from '../../components/Loading/index';
 
 const Home = () => {
   const [technologies, setTechnologies] = useState([]);
@@ -16,7 +17,7 @@ const Home = () => {
   
   return (
     <div className={styles.container}>
-      {technologies.length === 0 && <div>Loading...</div>}
+      {technologies.length === 0 && <Loading />}
 
       {technologies.length >= 1 && (
         <>
