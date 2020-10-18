@@ -1,5 +1,6 @@
 .container {
   margin-top: 90px;
+  margin-bottom: 70px;
   color: #fff;
   text-align: center;
   background-size: cover;
@@ -29,7 +30,7 @@
   align-items: center;
   flex-direction: column;
   width: 40vw;
-  height: 40vh;
+  height: 50vh;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 10px;
@@ -113,6 +114,11 @@
 
 .link:hover {
   color: #00ffff;
+}
+
+.error {
+  color: #ff0000;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 750px) {

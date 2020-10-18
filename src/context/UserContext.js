@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import URL from '../config/index';
 
 const URL_LOGIN = `${URL}/auth/authenticate`;
+const URL_SIGNUP = `${URL}/auth/register`;
 
 export const UserContext = createContext();
 
@@ -65,6 +66,34 @@ export const UserStorage = ({ children }) => {
     }
   }; 
 
+  const signUp = async data => {
+    try {
+      setError(null);
+      setLoading(true);
+
+      const response = await fetch(URL_SIGNUP, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        setError('E-mail já cadastrado');
+      }
+
+      if (response.ok) {
+        history.push('/');
+      }
+
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     const autoLogin = async () => {
       const token = window.localStorage.getItem('token');
@@ -98,7 +127,8 @@ export const UserStorage = ({ children }) => {
       loading, 
       login,
       authenticate,
-      token
+      token,
+      signUp
     }}>
       {children}
     </UserContext.Provider>

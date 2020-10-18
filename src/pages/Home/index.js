@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
   
   const description = <>
-    DEVFLIX é um projeto pessoal feito para criar playlists de vídeos relacionados a Programação, Desenvolvimento Web, Mobile e Desktop.<br />Sinta-se à vontade para se cadastrar e incluir Tecnologias e Vídeos.
+    DEVFLIX é um projeto pessoal feito para criar playlists de vídeos relacionados à Programação, Desenvolvimento Web, Mobile e Desktop.<br />Sinta-se à vontade para se cadastrar e incluir Tecnologias e Vídeos.
   </>;
 
   return (
