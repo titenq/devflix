@@ -1,19 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
-import styles from './Tecnologias.module.css';
-import Button from '../../components/Button';
+import styles from './Login.module.css';
 import screenshot from '../../assets/img/screenshot.jpg';
-import { createTechnology } from '../../repositories/technologies';
+import Button from '../../components/Button';
 import { UserContext } from '../../context/UserContext';
 
-const Tecnologias = () => {
-  const { token } = useContext(UserContext);
-  const history = useHistory();
+const Login = () => {
+  const { authenticate, loading } = useContext(UserContext);
 
   const initialValues = {
-    name: '', 
-    color: '#6925D9'
+    email: '', 
+    password: ''
   };
  
   const [values, setValues] = useState(initialValues);
@@ -29,59 +26,61 @@ const Tecnologias = () => {
     event.target.getAttribute('name'), 
     event.target.value
   );
-  
+
   const handleSubmit = event => {
     event.preventDefault();
-    
-    createTechnology(values, token)
-    .then(() => history.push('/'));
+
+    authenticate(values);
   };
 
   return (
     <div className={styles.container} style={{ backgroundImage: `url(${screenshot})` }}>
-      <h1 className={styles.title}>Cadastro de Tecnologia</h1>
+      <h1 className={styles.title}>Login</h1>
 
       <div className={styles.form_container}>
         <form onSubmit={handleSubmit}>
           <div className={styles.form}>
             <div className={styles.input_container}>
-              <span>Digite a Tecnologia:</span>
+              <span>e-mail:</span>
               <div className={styles.label_float}>
                 <input
                   className={styles.input}
-                  type="text" 
-                  id="name" 
-                  name="name"
-                  value={values.name} 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  value={values.email} 
                   placeholder=" "
                   autoComplete="off"
                   required
                   onChange={handleChange} 
                 />
-                <label className={styles.label} htmlFor="name">Nome da Tecnologia</label>
+                <label className={styles.label} htmlFor="name">e-mail</label>
               </div>
             </div>
-
-            <div className={styles.input_color_container}>
-              <label className={styles.label_color} htmlFor="color">Escolha a Cor:</label>
-              <div className={styles.color_container}>
-              <input
-                  className={styles.color}
-                  type="color" 
-                  id="color" 
-                  name="color"
-                  value={values.color}
+            <div className={styles.input_container}>
+              <span>Senha:</span>
+              <div className={styles.label_float}>
+                <input
+                  className={styles.input}
+                  type="password" 
+                  id="password" 
+                  name="password"
+                  value={values.password} 
+                  placeholder=" "
+                  autoComplete="off"
+                  required
                   onChange={handleChange} 
                 />
+                <label className={styles.label} htmlFor="name">Senha</label>
               </div>
             </div>
           </div>
-          
-          <Button title="Cadastrar" />
+          {loading && <Button disabled title="Logar" />}
+          {!loading && <Button title="Logar" />}
         </form>
       </div>
     </div>
   );
 };
 
-export default Tecnologias;
+export default Login;

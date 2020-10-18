@@ -1,29 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import styles from './Header.module.css';
-
-const links = [
-  {
-    name: 'Home',
-    to: '/'
-  },
-  {
-    name: 'Cadastrar Tecnologias',
-    to: '/tecnologias'
-  },
-  {
-    name: 'Cadastrar Vídeos',
-    to: '/videos'
-  },
-];
+import { UserContext } from '../../context/UserContext';
 
 const Header = () => {
+  const { login, userLogout } = useContext(UserContext);
   const [isOpen, setIsOpen] = useState(false);
-
+  
   const toggleOpen = () => {
     isOpen ? setIsOpen(false) : setIsOpen(true);
-
   };
 
   return (
@@ -45,21 +31,66 @@ const Header = () => {
         </svg>
       </NavLink>
         <ul className={`${styles.links} ${isOpen ? styles.links_on : ''}`}>
-        {links.map((link, index) => {
-          return (
-            <li key={index}>
-              <NavLink 
-                className={styles.hover_link} 
-                to={link.to}
-                exact 
-                activeStyle={{ color: '#ff0000' }} 
-                onClick={toggleOpen}>
-                  {link.name}
+          <li>
+            <NavLink
+              className={styles.hover_link}
+              to="/"
+              exact
+              activeStyle={{ color: '#ff0000' }}
+              onClick={toggleOpen}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={styles.hover_link}
+              to="/tecnologias"
+              exact
+              activeStyle={{ color: '#ff0000' }}
+              onClick={toggleOpen}
+            >
+              + Tecnologias
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={styles.hover_link}
+              to="/videos"
+              exact
+              activeStyle={{ color: '#ff0000' }}
+              onClick={toggleOpen}
+            >
+              + Vídeos
+            </NavLink>
+          </li>
+          {!login && (
+            <li>
+              <NavLink
+                className={styles.hover_link}
+                to="/login"
+                exact
+                activeStyle={{ color: '#ff0000' }}
+                onClick={toggleOpen}
+              >
+                Login
               </NavLink>
             </li>
-          );
-        })}
-      </ul>
+          )}
+          {login && (
+            <li>
+              <NavLink
+                className={styles.hover_link}
+                to="#"
+                exact
+                activeStyle={{ color: '#ff0000' }}
+                onClick={userLogout}
+              >
+                Logout
+              </NavLink>
+            </li>
+          )}
+        </ul>
       <div className={`${styles.hamburger} ${isOpen ? styles.open : ''}`} onClick={toggleOpen}>
         <div className={styles.btn_hamburger}></div>
       </div>

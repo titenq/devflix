@@ -29,7 +29,7 @@
   align-items: center;
   flex-direction: column;
   width: 40vw;
-  height: 50vh;
+  height: 40vh;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 10px;
@@ -45,10 +45,6 @@
   padding: 5px 20px 15px 20px;
   margin: 10px;
   border-radius: 5px;
-}
-
-.form span.no_select {
-  color: #ff0000;
 }
 
 .label_float {
@@ -103,15 +99,6 @@
 
 .label {
   color: #868686;
-}
-
-.select {
-  padding: 5px 15px;
-  color: #fff;
-  background-color: #212121;
-  border-radius: 5px;
-  border: none;
-  outline: none;
 }
 
 @media screen and (max-width: 750px) {

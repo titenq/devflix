@@ -3,29 +3,34 @@ import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import BannerMain from '../../components/BannerMain/index';
 import Carousel from '../../components/Carousel/index';
-import getAllWithVideos from '../../repositories/technologies';
+import { getTechnologies } from '../../repositories/technologies';
+import Loading from '../../components/Loading';
 
 const Home = () => {
   const [technologies, setTechnologies] = useState([]);
 
   useEffect(() => {
-    getAllWithVideos()
+    getTechnologies()
       .then(data => setTechnologies(data))
       .catch(error => console.log(error.message))
   }, []);
   
+  const description = <>
+    DEVFLIX é um projeto pessoal feito para criar playlists de vídeos relacionados a Programação, Desenvolvimento Web, Mobile e Desktop.<br />Sinta-se à vontade para se cadastrar e incluir Tecnologias e Vídeos.
+  </>;
+
   return (
     <div className={styles.container}>
-      {technologies.length === 0 && <div>Loading...</div>}
+      {technologies.length === 0 && <Loading />}
 
       {technologies.length >= 1 && (
         <>
           <BannerMain
-            videoTitle={technologies[3].videos[0].title}
-            url={technologies[3].videos[0].url}
-            videoDescription={"Já parou pra pensar como uma biblioteca tipo o Formik lida com as suas validações de formulário? Nesse vídeo aqui, vamos fazer passo a passo uma forma super bacana de lidar com validações de formulário usando custom hooks, useEffect de um jeito bem natural e que você conseguiria aplicar no seu projeto amanhã!"}
+            videoTitle={technologies[2].videos[0].title}
+            url={technologies[2].videos[0].url}
+            videoDescription={description}
           />
-          {technologies.map(technology => <Carousel technology={technology} />)}
+          {technologies.map((technology, index) => <Carousel key={index} technology={technology} />)}
         </>
       )}
     </div>

@@ -39,8 +39,8 @@ const BannerMain = ({ videoTitle, videoDescription, url }) => {
           <a 
             className={styles.watch_button}
             href={`https://youtube.com/watch?v=${youTubeID}`} 
+            rel="noopener noreferrer"
             target="_blank" 
-            rel="noopenner noreferrer" 
           >
             <FaPlay />
           </a>

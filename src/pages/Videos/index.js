@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import styles from './Videos.module.css';
 import Button from '../../components/Button';
 import screenshot from '../../assets/img/screenshot.jpg';
-import URL_VIDEOS from '../../repositories/videos';
-import  { create } from '../../repositories/videos';
-import { getAll } from '../../repositories/technologies';
+import { createVideo } from '../../repositories/videos';
+import { getTechnologies } from '../../repositories/technologies';
+import { UserContext } from '../../context/UserContext';
 
 const Videos = () => {
+  const { token } = useContext(UserContext);
+  const [select, setSelect] = useState(true);
   const history = useHistory();
 
   const initialValues = {
-    technologyId: null,
+    technology: [],
     title: '', 
     url: ''
   };
@@ -34,25 +36,29 @@ const Videos = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    if (values.technology.length === 0) {
+      setSelect(false);
+
+      return;
+    } else {
+      setSelect(true);
+    }
   
-    create({
-      technologyId: Number(values.technologyId),
-      title: values.title,
-      url: values.url,
-    })
+    createVideo(
+      {
+        technology: values.technology.split(','),
+        title: values.title,
+        url: values.url
+      },
+      token
+    )
     .then(() => history.push('/'));
   };
 
   useEffect(() => {
-    fetch(URL_VIDEOS, {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify(values)
-  });
-    getAll()
-      .then(technologies => setTechnologies(technologies))
+    getTechnologies()
+      .then(technologies => setTechnologies(technologies));
   }, []);
 
   return (
@@ -63,17 +69,18 @@ const Videos = () => {
         <form onSubmit={handleSubmit}>
           <div className={styles.form}>
             <div className={styles.input_container}>
-              <span>Selecione a Tecnologia: &nbsp;</span>
+              <span className={select ? '' : styles.no_select}>Selecione a Tecnologia: &nbsp;</span>
                 <select 
+                  defaultValue={"DEFAULT"}
                   className={styles.select}
-                  name="technologyId" 
-                  id="technologyId" 
+                  name="technology" 
+                  id="technology" 
                   onChange={handleChange} 
                   autoFocus
                   required>
-                    <option value="" selected disabled>Selecione:</option>
+                    <option value="DEFAULT" disabled>Selecione:</option>
                   {technologies.map(technology => (
-                    <option key={technology.id} value={technology.id}>{technology.name}</option>
+                    <option key={technology._id} value={[technology.name, technology.color]}>{technology.name}</option>
                   ))}
                 </select>
             </div>
@@ -113,7 +120,7 @@ const Videos = () => {
             </div>
           </div>
           
-          <Button />
+          <Button title="Cadastrar" />
         </form>
       </div>
     </div>

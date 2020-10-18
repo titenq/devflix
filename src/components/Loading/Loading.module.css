@@ -1,0 +1,12 @@
+.container {
+  height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 4vw;
+  color: #fff;
+}

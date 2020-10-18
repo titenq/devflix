@@ -4,14 +4,17 @@
 
 ![](https://github.com/titenq/devflix/blob/master/screenshot01.jpg?raw=true)
 
-Site com vídeos para desenvolvedores e programadores.
+DEVFLIX é um projeto pessoal feito para criar playlists de vídeos relacionados a Programação, Desenvolvimento Web, Mobile e Desktop.
 
 ### Demo
 [https://devflix.titenq.vercel.app/](https://devflix.titenq.vercel.app/ "https://devflix.titenq.vercel.app/")
 
 ### Tecnologias
 - React
-- JSON Server
+- NodeJS
+- Express
+- MongoDB
+- JWT
 
 ### Screenshot
 
